@@ -13,7 +13,7 @@ keytool -list -v -keystore path/to/client.jks -storepass clientPW
 ```
 
 ##Rampart
-[Rampart](http://axis.apache.org/axis2/java/rampart/) is deployed as Axis2 module. To use it, archive rampart.mar should be put in web/WEB-INF/modules, and the line <module ref="rampart"/> must be added to axis2.xml (or services.xml). Rampart libraries (rampart-core, rampart-policy, rampart-trust, and rampart) must be copied to the same lib folder where the other axis2 libraries are located.  
+[Rampart](http://axis.apache.org/axis2/java/rampart/) is deployed as Axis2 module. To use it in the SOAP client, you need archive rampart.mar and the appropriate libraries (see [here](http://axis.apache.org/axis2/java/rampart/download.html)). Rampart libraries (rampart-core, rampart-policy, rampart-trust, and rampart) must be copied to the same lib folder where the other axis2 libraries are located.  
 
 Next, Rampart security policy is defined according to WS-Security Policy Language and added to services.xml file. This policy states security requirements of Web services in a standard, interoperable manner, and has two main parts. Asymmetric binding defines what keys will be used, and a few additional properties such as which algorithms to be used in cryptographic operations, layout of the security header, etc. Signed parts assertion defines what parts of the message should be signed (here we will be signing the SOAP body of the message). You can find detailed tutorial on WS security policy [here](http://wso2.com/library/3132/).  
 
